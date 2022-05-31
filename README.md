@@ -26,6 +26,8 @@ Install required packages:
 
  
 _Run all commands from project directory (CompetitiveProgramming)_
-
-## other updates will be uploaded soon!
+---
+must_have.py -> here are some algorithms that you may need, will try to update it as soon as possible
+template.py -> here is my template that I use, I will try to optimize it.
+cf_generator.py -> a script that automatically creates a directory for the upcoming codeforces contest, it creates with files a.py, b.py as well.
 ---
