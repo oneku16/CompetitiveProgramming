@@ -34,7 +34,7 @@ def creat(folder_name: str):
 	folder_name[-2] = "2"
 	folder_name = "".join(folder_name)
 
-	folder_path  = os.path.join(dir_path, folder_name)
+	folder_path  = os.path.join(dir_path + "/CodeForce", folder_name)
 	files = ['a.py', 'b.py', 'c.py', 'd.py', 'e.py']
 	template = os.path.join(dir_path, "template.py")
 
@@ -58,9 +58,6 @@ def creat(folder_name: str):
 def main():
 
 	tprint("CODEFORCES")
-	folder_name = get_codeforces()
-
-	# stdout.write(f"{type(folder_name)}\n")
-	creat(folder_name = folder_name)
+	creat(folder_name = get_codeforces())
 
 if __name__ == '__main__': main()
