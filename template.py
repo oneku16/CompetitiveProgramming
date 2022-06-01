@@ -27,6 +27,8 @@ def solve():
 	# s = str_stdin()
 	# s_list = strs_stdin() 
 
+	# used = [0] * n
+
 
 def main():
 	for _ in range(int_stdin()): solve()
