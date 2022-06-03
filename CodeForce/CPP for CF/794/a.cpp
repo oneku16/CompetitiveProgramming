@@ -1,9 +1,9 @@
 #include<bits/stdc++.h>
-# define ll long long;
+// # define ll long long;
 	
 using namespace std;
 const int N = 2 * 10e5;
-int n, t;
+long long n, t;
 
 
 void solve(){
