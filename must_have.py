@@ -24,3 +24,8 @@ def bin_pow(num = int, power = int) -> int:
     else:
         num_b = bin_pow(num, power / 2)
         return num_b * num_b 
+
+def bfs(): pass
+
+
+def dfs(): pass 
