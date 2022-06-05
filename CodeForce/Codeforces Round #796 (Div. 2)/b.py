@@ -26,42 +26,39 @@ def output(val):
 def solve(): 
 
 	n = int_stdin()
-	n_nums = sorted(ints_stdin())
+	nums = sorted(ints_stdin())
 
 	odd = 0
 	even = 0
-	def iseq(a: int, b: int):
-		return True if a > b else False
+	cnt = 0
 	evenlist = []
-	# two = [1] * n
+
 	for i in range(n):
-		if n_nums[i] % 2: odd+=1
+		if nums[i] % 2: odd += 1
 		else:
-			# if str(n_nums[i])[-1] == "2" and len(str(n_nums[i])) != 1: two[i] = 0
-			evenlist.append(n_nums[i]) 
 			even += 1
-	if odd == even: output(n/2)
-	
+			evenlist.append(i)
+	if not even: output(0)
+	elif odd == even: output(even)
 	elif odd > even: output(even)
-
-	elif odd < even:
-		cnt = 0
-		if odd: 
-			while (even > odd):
-				cnt+=odd
-				even -= odd
+	# elif n == 1 and even == 1:
+	# 	while: pass 
+	elif odd < even: 
+		cnt = odd
+		if even > 1: even -= odd + 1
 		else:
-			cnt += (even - 1)
-		i = 0
+			cnt -= 1 
+			even - odd
 		summ = 0
-		while even > 0:
-			summ+= n_nums[i]
-			even -= 1
-			i += 1
-		while(summ%2==0):
-			cnt+=1
-			summ /= 2
+		# output(even)
+		for i in range(even):
 
+			summ += nums[evenlist[i]]
+			cnt += 1
+		# output(summ)
+		while not summ % 2:
+			cnt += 1
+			summ /= 2
 		output(cnt)
 
 

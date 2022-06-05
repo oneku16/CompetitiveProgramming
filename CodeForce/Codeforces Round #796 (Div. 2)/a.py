@@ -3,6 +3,7 @@
 #  created: 03/06/2022 17:31  #
 ###############################
 
+
 from sys import stdin, stdout
 # import threading
 # import queue
@@ -27,13 +28,23 @@ def output(val):
 def solve(): 
 
 	x = int_stdin()
+	pos = [1, 1]
 	y = 0
-	while(True):
-		if x & y > 0 and x ^ y > 0: break
-		y+=1
+	found = False
+	while True:
+		for power in pos:
+			if x & power > 0 and x ^ power > 0:
+				found = True
+				y = power
+				break
+		else:
+			pos[0] = pos[0] * 2
+			pos[1] = pos[0] + 1
+		if found: break
 
-	output(y)
+	output(y) 
 
+	
 
 def main():
 	for _ in range(int_stdin()): solve()
