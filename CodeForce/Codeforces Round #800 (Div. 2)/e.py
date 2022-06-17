@@ -1,3 +1,7 @@
+###############################
+#        author: oneku        #
+#  created: 16/06/2022 18:58  #
+###############################
 
 
 from sys import stdin, stdout
@@ -24,7 +28,7 @@ def output(val):
 def solve(): 
 
 	n = int_stdin()
-	# nums = ints_stdin()
+	# n_nums = ints_stdin()
 	# a, b = ints_stdin()
 	# s = str_stdin()
 	# s_list = strs_stdin() 

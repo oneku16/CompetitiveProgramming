@@ -1,3 +1,7 @@
+###############################
+#        author: oneku        #
+#  created: 16/06/2022 18:58  #
+###############################
 
 
 from sys import stdin, stdout
@@ -23,14 +27,17 @@ def output(val):
 
 def solve(): 
 
-	n = int_stdin()
-	# nums = ints_stdin()
-	# a, b = ints_stdin()
-	# s = str_stdin()
-	# s_list = strs_stdin() 
 
-	# used = [0] * n
+	a, b = ints_stdin()
+	ans = ""
+	if a == b: output('1' * b + '0' * a)
+	elif a < b:
+		if a % 2: output('0' * a + '1' * b)
+	else:
+		if 
 
+
+		
 
 def main():
 	for _ in range(int_stdin()): solve()
