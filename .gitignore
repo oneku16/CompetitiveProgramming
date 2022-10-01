@@ -1,5 +1,6 @@
 **/__pychache__/
-/envCodeForces
+**/.env
 **/test.cpp
 **/*.exe
 **/test.py
+*/test/

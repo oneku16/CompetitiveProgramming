@@ -14,7 +14,6 @@ def get_id(url: str) -> str:
 	
 	return contests
 
-
 def get_codeforces(url = get_id("https://codeforces.com/contests")) -> str:
 	
 	url = "https://codeforces.com" + url
@@ -27,11 +26,11 @@ def get_codeforces(url = get_id("https://codeforces.com/contests")) -> str:
 def creat(folder_name: str):
 
 	current_time = strftime("%d/%m/%Y %H:%M", localtime())
-	user_info = f"###############################\n#        author: oneku        #\n#  created: {current_time}  #\n###############################\n"
+	user_info = f"###############################\n#        author: oneku        #\n# created at {current_time} #\n###############################\n"
 
 	dir_path = os.path.dirname(os.path.realpath(__file__))
 	folder_name = list(folder_name[2:folder_name.index(")") + 1])
-	folder_name[-2] = "2"
+	# folder_name[-2] = "2"
 	folder_name = "".join(folder_name)
 
 	folder_path  = os.path.join(dir_path + "/CodeForce", folder_name)
@@ -59,6 +58,6 @@ def main():
 
 	tprint("CODEFORCES")
 	creat(folder_name = get_codeforces())
-	# creat(folder_name = "Codeforces Round #799 (Div. 4)")
+	# creat(folder_name = "Educational Codeforces Round 135 (Rated for Div. 2)")
 
 if __name__ == '__main__': main()

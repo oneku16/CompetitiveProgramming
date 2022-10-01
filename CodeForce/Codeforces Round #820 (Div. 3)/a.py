@@ -1,9 +1,9 @@
 ###############################
 #        author: oneku        #
-#  created: 15/06/2022 00:44  #
+# created at 12/09/2022 17:25 #
 ###############################
 
-
+# Bismillah
 from sys import stdin, stdout
 # import threading
 # import queue
@@ -15,8 +15,8 @@ from sys import stdin, stdout
 str_stdin = lambda: stdin.readline()[:-1]
 strs_stdin = lambda: list(map(str, stdin.readline().split()))
 int_stdin = lambda: int(stdin.readline())
-ints_stdin = lambda: list(map(int, stdin.readline().split()))
-
+ints_stdin = lambda: map(int, stdin.readline().split())
+int_list_stdin = lambda: list(map(int, stdin.readline().split()))
 
 def output(val):
 	if type(val) is list:
@@ -26,17 +26,19 @@ def output(val):
 
 
 def solve(): 
+	a,b,c = ints_stdin()
+	t1=abs(a-1)
+	t2=abs(b-c)
+	t3=abs(c-1)+t2
+	if t1 == t3:
+		output(3)
+	else:
+		if a>t3:
+			output(2)
+		else:output(1)
 
-	n_nums = ints_stdin()
-
-	cnt = 0 
-	for i in range(1, 4):
-		if n_nums[i] > n_nums[0]: cnt += 1
-
-	output(cnt)
-
-	# used = [0] * n
-
+	# t=[abs(a-1),abs(b-c),abs(c-1)+abs(b-c)]
+	# output(t.index(min(t))+1)
 
 def main():
 	for _ in range(int_stdin()): solve()

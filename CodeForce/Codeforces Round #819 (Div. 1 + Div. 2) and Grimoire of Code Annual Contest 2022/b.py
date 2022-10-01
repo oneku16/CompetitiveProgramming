@@ -1,6 +1,6 @@
 ###############################
 #        author: oneku        #
-#  created: 15/06/2022 00:44  #
+#  created: 06/09/2022 20:19  #
 ###############################
 
 
@@ -15,7 +15,8 @@ from sys import stdin, stdout
 str_stdin = lambda: stdin.readline()[:-1]
 strs_stdin = lambda: list(map(str, stdin.readline().split()))
 int_stdin = lambda: int(stdin.readline())
-ints_stdin = lambda: list(map(int, stdin.readline().split()))
+ints_stdin = lambda: map(int, stdin.readline().split())
+int_list_stdin = lambda: list(map(int, stdin.readline().split()))
 
 
 def output(val):
@@ -27,17 +28,24 @@ def output(val):
 
 def solve(): 
 
-	n = int_stdin()
-	# n_nums = ints_stdin()
-	# a, b = ints_stdin()
-	# s = str_stdin()
-	# s_list = strs_stdin() 
-
-	# used = [0] * n
+	n,m=ints_stdin()
+	if n==1:
+		output('YES')
+		return m
+	if not m%n and not m==n:
+		output('YES')
+		return [m//n]*n
+	else:
+		if not n%2 and not m%2:
+			output('YES')
+			return [m-n]*(m-n) + [1]*(n*2-m)
+		elif n%2 or m%2 or n==m:
+			return 'NO'
+		
 
 
 def main():
-	for _ in range(int_stdin()): solve()
+	for _ in range(int_stdin()):  output(solve())
 
 
 if __name__ == "__main__": main()

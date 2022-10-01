@@ -1,10 +1,14 @@
+###############################
+#        author: oneku        #
+# created at 28/09/2022 11:32 #
+###############################
 
 # Bismillah
 from sys import stdin, stdout
 # import threading
 # import queue
 # from collections import Counter
-# from math import inf, gcd
+from math import inf, gcd, factorial as fac
 # import heapq
 # import itertools
 
@@ -23,14 +27,20 @@ def output(val):
 	else: stdout.write(f"{val}\n")
 
 # u can write main logic here, but remember that calling methods is expensive
+mod=998_244_353
+fi=1.61803398875
 def solve(): 
 
-	# n = int_stdin()
-	# nums = int_list_stdin()
-	# a, b = ints_stdin()
-	# s = str_stdin()
-	# s_list = strs_stdin() 
-	pass 
+	n = int_stdin()
+	allC=fac(n)
+	a=n//2
+	q=(n**a)*(n-1)
+
+	alex=allC-1-q
+	# print(alex)
+	# nonone=fac(n//2)//(fac((n//2)//2)*fac((n//2)//2))
+	output([alex%mod, allC-alex, 1])
+	# pass 
 
 
 # u can write main logic here as well!
@@ -41,7 +51,7 @@ def main():
 	# a, b = ints_stdin() #ex: 1 2
 	# s = str_stdin() #ex: 'name'
 	# s_list = strs_stdin() #ex: 'a', 'name', 'blahblah'
-	# for _ in range(int_stdin()): solve() # calls solve() method user_input times
-	pass # remove it
+	for _ in range(int_stdin()): solve() # calls solve() method user_input times
+	# pass # remove it
 
 if __name__ == "__main__": main()

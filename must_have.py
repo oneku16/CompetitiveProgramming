@@ -8,7 +8,7 @@ def is_prime(number):
     return True
 
 # bubble sort
-def bubble_sort(a):
+def bubbleort(a):
     
     for i in range(n - 1):
         for j in range(n - 1 - i):
@@ -17,7 +17,7 @@ def bubble_sort(a):
     return a
 
 # Binary exponentiation
-def bin_pow(num = int, power = int) -> int:
+def bin_pow(num:int, power:int) -> int:
 
     if not power: return 1
     if power % 2: return bin_pow(num, power - 1) * num
@@ -47,3 +47,11 @@ def bfs(): pass
 
 
 def dfs(): pass 
+
+# Binarysearch
+# while lo < hi:
+#         mid = lo + (hi-lo+1)//2;
+#         if target < nums[mid]:
+#             hi = mid - 1
+#         else:
+#             lo = mid

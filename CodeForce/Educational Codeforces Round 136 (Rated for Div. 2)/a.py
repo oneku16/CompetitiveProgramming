@@ -1,3 +1,7 @@
+###############################
+#        author: oneku        #
+# created at 28/09/2022 11:32 #
+###############################
 
 # Bismillah
 from sys import stdin, stdout
@@ -27,10 +31,19 @@ def solve():
 
 	# n = int_stdin()
 	# nums = int_list_stdin()
-	# a, b = ints_stdin()
+	a, b = ints_stdin()
 	# s = str_stdin()
 	# s_list = strs_stdin() 
-	pass 
+	# pass 
+
+	if min(a,b)==1:
+		return a, b
+	elif max(a,b)==2:
+		return a, b
+	if a==3 and b==3:
+		return 2, 2
+	else:
+		return a-1, b-1
 
 
 # u can write main logic here as well!
@@ -41,7 +54,7 @@ def main():
 	# a, b = ints_stdin() #ex: 1 2
 	# s = str_stdin() #ex: 'name'
 	# s_list = strs_stdin() #ex: 'a', 'name', 'blahblah'
-	# for _ in range(int_stdin()): solve() # calls solve() method user_input times
-	pass # remove it
+	for _ in range(int_stdin()): print(*solve()) # calls solve() method user_input times
+	# pass # remove it
 
 if __name__ == "__main__": main()

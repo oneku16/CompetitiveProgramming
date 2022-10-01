@@ -1,3 +1,7 @@
+###############################
+#        author: oneku        #
+# created at 28/09/2022 11:32 #
+###############################
 
 # Bismillah
 from sys import stdin, stdout
@@ -25,12 +29,21 @@ def output(val):
 # u can write main logic here, but remember that calling methods is expensive
 def solve(): 
 
-	# n = int_stdin()
-	# nums = int_list_stdin()
+	n = int_stdin()
+	nums = int_list_stdin()
+	nums2=[0]*n
+	nums2[0]=nums[0]
+	for i in range(1,n):
+		a,b=nums2[i-1]+nums[i], nums2[i-1]-nums[i]
+		if a*b<0 or a==b:
+			nums2[i]=max(a,b)
+		else:
+			return -1
+	return nums2
 	# a, b = ints_stdin()
 	# s = str_stdin()
 	# s_list = strs_stdin() 
-	pass 
+	# pass 
 
 
 # u can write main logic here as well!
@@ -41,7 +54,7 @@ def main():
 	# a, b = ints_stdin() #ex: 1 2
 	# s = str_stdin() #ex: 'name'
 	# s_list = strs_stdin() #ex: 'a', 'name', 'blahblah'
-	# for _ in range(int_stdin()): solve() # calls solve() method user_input times
-	pass # remove it
+	for _ in range(int_stdin()): output(solve()) # calls solve() method user_input times
+	# pass # remove it
 
 if __name__ == "__main__": main()
