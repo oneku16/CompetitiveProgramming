@@ -87,33 +87,14 @@ MIN = -1_000_000_007
 def read_from_file():
     with open('input.txt', 'r') as file:
         lines = file.readlines()
-        n, m, k = map(int, lines[0].split())
-        matrix = [[]] * n
-        commands = [[]] * k
-        for i in range(1, n + 1):
-            matrix[i - 1] = list(accumulate(map(int, lines[i].split())))
-        for i in range(n + 1, n + 1 + k):
-            commands[i - n - 1] = list(map(int, lines[i].split()))
-        return n, m, k, matrix, commands
 
 
 def solve() -> Any:
 
-    n, m, k, matrix, commands = read_from_file()
-
-    answer = [0] * k
-    for q in range(k):
-        x_1, y_1, x_2, y_2 = commands[q]
-        counter = 0
-        for i in range(x_1 - 1, x_2):
-            if y_1 - 1:
-                counter += matrix[i][y_2 - 1] - matrix[i][y_1 - 2]
-            else:
-                counter += matrix[i][y_2 - 1]
-        # output(counter)
-        answer[q] = counter
-
-    return '\n'.join(map(str, answer))
+    try:
+        return eval(read_str())
+    except (NameError, SyntaxError):
+        return 'WRONG'
 
 
 def main() -> None:
