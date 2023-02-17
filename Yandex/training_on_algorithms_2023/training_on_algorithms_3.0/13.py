@@ -85,16 +85,32 @@ MIN = -1_000_000_007
 
 
 def read_from_file():
-    with open('input.txt', 'r') as file:
-        lines = file.readlines()
+    ...
 
 
 def solve() -> Any:
 
-    try:
-        return eval(read_str())
-    except (NameError, SyntaxError):
-        return 'WRONG'
+    string = read_str()
+
+    stack = []
+    operators = {'0': 1, '1': 0}
+    operands = {'&': 0, '|': 0, '^': 0, '!': 1}
+
+    negation = False
+
+    for item in string:
+        if item == '!':
+            negation = True
+            continue
+        if item in operators:
+            stack.append(int(item) if not negation else abs(int(item) - 1))
+            negation = False
+        else:
+            if negation:
+                pass
+
+
+
 
 
 def main() -> None:
